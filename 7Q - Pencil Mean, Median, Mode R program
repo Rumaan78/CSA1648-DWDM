@@ -1,0 +1,11 @@
+Name <- "Shaik Mahaboob Subhani Rumaan"
+Reg_Num <- c(192225048)
+print(Name)
+print(Reg_Num)
+pencils <- c(9, 25, 23, 12, 11, 6, 7, 8, 9, 10)
+mean_pencils <- mean(pencils)
+median_pencils <- median(pencils)
+mode_pencils <- names(sort(table(pencils), decreasing = TRUE)[1])
+print(mean_pencils)
+print(median_pencils)
+print(mode_pencils)
