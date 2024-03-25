@@ -1,0 +1,19 @@
+Name <- 'Shaik Mahaboob Subhnai Rumaan'
+Reg_Num <- c(192225048)
+print(Name)
+print(Reg_Num)
+intervals <- c("1-5", "5-15", "15-20", "20-50", "50-80", "80-110")
+frequencies <- c(200, 450, 300, 1500, 700, 44)
+approximate_median <- function(intervals, frequencies) {
+  n <- sum(frequencies) 
+  cum_freq <- cumsum(frequencies)  
+  mid_point <- n / 2  # Midpoint of the data
+  median_interval_index <- which.max(cum_freq >= mid_point)
+  lower_bound <- as.numeric(strsplit(intervals[median_interval_index], "-")[[1]][1])
+  width <- diff(as.numeric(strsplit(intervals[median_interval_index], "-")[[1]]))
+  f <- frequencies[median_interval_index]
+  median <- lower_bound + ((mid_point - cum_freq[median_interval_index - 1]) / f) * width
+  return(median)
+}
+median_value <- approximate_median(intervals, frequencies)
+print(paste("Approximate Median Value:", median_value))
