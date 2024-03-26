@@ -1,0 +1,15 @@
+Name <- "Shaik Mahaboob Subhani Rumaan"
+Reg_Num <- c(192225048)
+print(Name)
+print(Reg_Num)
+data <- c(200, 300, 400, 600, 1000)
+min_max <- function(x) {
+  (x - min(x)) / (max(x) - min(x))
+}
+min_max_normalized <- min_max(data)
+print(min_max_normalized)
+z_score <- function(x) {
+  (x - mean(x)) / sd(x)
+}
+z_score_normalized <- z_score(data)
+print(z_score_normalized)
