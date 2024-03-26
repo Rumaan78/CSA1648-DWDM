@@ -1,0 +1,14 @@
+name <- "Shaik Mahaboob Subhani Rumaan"
+print(name)
+reg_num <- c(192225048)
+print(reg_num)
+set.seed(123)  # for reproducibility
+points <- c(rnorm(15, mean = 50, sd = 5), 120) 
+boxplot(points,
+        main = "Distribution of Points Scored by Players",
+        ylab = "Points Scored")
+outliers <- boxplot.stats(points)$out
+if(length(outliers) > 0) {
+  points(outliers, rep(1, length(outliers)), col = "red", pch = 19)
+  legend("topright", legend = "Outliers", col = "red", pch = 19)
+}        
