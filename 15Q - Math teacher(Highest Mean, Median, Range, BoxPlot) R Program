@@ -1,0 +1,23 @@
+Name <- "Shaik Mahaboob Subhani Rumaan"
+print(Name)
+Reg_Num <- c(192225048)
+print(Reg_Num)
+class_a <- c(76, 35, 47, 64, 95, 66, 89, 36, 84)
+class_b <- c(51, 56, 84, 60, 59, 70, 63, 66, 50)
+mean_a <- mean(class_a)
+median_a <- median(class_a)
+range_a <- max(class_a) - min(class_a)
+mean_b <- mean(class_b)
+median_b <- median(class_b)
+range_b <- max(class_b) - min(class_b)
+print(Class A Results: )
+print(mean_a)
+print(median_a)
+print(range_a)
+print(Class B results: )
+print(mean_b)
+print(median_b)
+print(range_b)
+boxplot(class_a, class_b, names = c("Class A", "Class B"), 
+        main = "Comparison of Exam Scores (Class A vs Class B)",
+        ylab = "Scores")
