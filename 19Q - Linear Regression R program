@@ -1,0 +1,14 @@
+Name <- "Shaik Mahaboob Subhani Rumaan"
+print(Name)
+Reg_Num <- c(192225048)
+print(Reg_Num)
+data(water)
+str(water)
+plot(water$hardness, water$mortality, 
+     xlab = "Hardness", ylab = "Mortality",
+     main = "Scatter plot of Mortality vs Hardness")
+model <- lm(mortality ~ hardness, data = water)
+abline(model, col = "red")
+hardness_new <- data.frame(hardness = 88)
+predicted_mortality <- predict(model, newdata = hardness_new)
+cat("Predicted mortality for hardness = 88:", predicted_mortality)
