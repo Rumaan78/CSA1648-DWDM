@@ -1,0 +1,18 @@
+Name <- "Shaik Mahaboob Subhani Rumaan"
+print(Name)
+Reg_Num <- c(192225048)
+print(Reg_Num)
+prices <- c(1, 1, 5, 5, 5, 5, 5, 8, 8, 10, 10, 10, 10, 12, 14, 14, 14, 15, 15, 15, 15, 15, 15, 18, 18, 18, 18, 18,18, 18, 18, 20, 20, 20, 20, 20, 20, 20, 21, 21, 21, 21, 25, 25, 25, 25, 25, 28, 28, 30)
+num_bins <- 8
+partition <- cut(prices, breaks = num_bins, labels = FALSE)
+bin_means <- tapply(prices, partition, mean)
+print(bin_mean) 
+smoothed_data <- bin_means[partition]
+bin_breaks <- quantile(prices, probs = seq(0, 1, 1/num_bins))
+smoothed_data_boundary <- rep(NA, length(prices))
+for (i in 1:num_bins) {
+  indices <- which(prices >= bin_breaks[i] & prices <= bin_breaks[i+1])
+  smoothed_data_boundary[indices] <- mean(c(bin_breaks[i], bin_breaks[i+1]))
+}
+hist(prices, breaks = num_bins, main = "Histogram of Prices",
+     xlab = "Price", ylab = "Frequency")
